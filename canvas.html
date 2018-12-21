@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="canvas" width="1024" height="678" style="border:1px solid #ccc;display:block;margin:10%  auto">  
+    </canvas>
+    <script>
+        var canvas=document.getElementById("canvas");
+        var context=canvas.getContext('2d');
+            context.beginPath();
+            context.lineWidth=5;
+            context.strokeStyle="#ff0080";
+            
+            for(var i=0;i<10;i++){
+                context.beginPath();
+                context.arc(0+i*100,300,100,0,(1+i)/5*Math.PI);
+                context.closePath();
+                context.stroke();
+                context.fillStyle="pink";
+                context.fill();
+            }
+           
+        /*
+        var exam=[
+            {p:[{x:0 ,y: 0},{x:800,y:0},{x:800,y:400}],color:"red"},
+            {p:[{x:0,y: 0},{x:400,y:400},{x:0,y:800}],color:"#caff67"},
+            {p:[{x:0 ,y:800 },{x:800,y:600},{x:600,y:600},{x:600,y:200}],color:"#ff0080"},
+            {p:[{x:600,y:200},{x:600,y:600},{x:400,y:400},{x:200,y:200}],color:"green"},
+            {p:[{x:200 ,y:200 },{x:700,y:700},{x:500,y:700}],color:"pink"},
+            {p:[{x:700 ,y:800 },{x:400,y:800},{x:0,y:800}],color:"#ccc"},
+            {p:[{x:800 ,y:400 },{x:800,y:800},{x:400,y:800}],color:"blue"}
+        ]
+        console.log(exam[0].p);
+        window.onload=function(){
+            var canvas=document.getElementById("canvas");
+            var context=canvas.getContext("2d");
+            //使用context进行绘制
+           for(var i=0;i<exam.length;i++){
+               fun(exam[i],context);
+           }
+           function fun(piece,ext){
+            ext.beginPath();
+               ext.moveTo(piece.p[0].x,piece.p[0].y);
+               for(var j=1;j<piece.p.length;j++){
+                   ext.lineTo(piece.p[j].x,piece.p[j].y);
+               }
+               ext.closePath();
+               ext.fillStyle=piece.color;
+               ext.fill();
+               ext.lineWidth=3;
+               ext.strokeStyle="black";
+               ext.stroke();
+           }
+        }
+        */
+    </script>
+</body>
+</html>
